@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "findermiss"
+dynamic = ["version"]
+description = "เติมค่าที่หายในอนุกรมเวลา (linear / harmonic / snap)"
+dependencies = [
+    "numpy",
+    "pandas>=2.0",  # ใช้ to_datetime(format="ISO8601" / "mixed") ซึ่งมีตั้งแต่ 2.0
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib"]
+
+[tool.setuptools]
+py-modules = ["findermiss"]
+
+[tool.setuptools.dynamic]
+version = {attr = "findermiss.__version__"}
