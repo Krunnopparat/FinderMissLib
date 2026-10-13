@@ -1,11 +1,15 @@
 [build-system]
-requires = ["setuptools>=61"]
+requires = ["setuptools>=77"]  # 77 ขึ้นไปถึงรับ license แบบ SPDX string
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "findermiss"
 dynamic = ["version"]
-description = "เติมค่าที่หายในอนุกรมเวลา (linear / harmonic / snap)"
+description = "Fill missing values in time series (linear / harmonic / snap)"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "NOPPARAT CHEUNARROM" }]
 dependencies = [
     "numpy",
     "pandas>=2.0",  # ใช้ to_datetime(format="ISO8601" / "mixed") ซึ่งมีตั้งแต่ 2.0
